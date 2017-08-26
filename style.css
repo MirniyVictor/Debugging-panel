@@ -11,7 +11,8 @@ body {
     background-size: cover;
 }
 
-.test-panel {
+/*не удалять*/
+/*.test-panel {
     position: fixed;
     left: 0;
     right: 0;
@@ -88,4 +89,5 @@ body {
     border: 2px solid #fff;
     border-radius: 4px;
     padding: 0;
-}
+}*/
+/*не удалять*/

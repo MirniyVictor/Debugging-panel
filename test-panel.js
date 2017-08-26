@@ -73,6 +73,8 @@ $(function(){
 			}\
 		</style>\
 	');
+	
+	// dom elements
 
 	var debugHtml = $('\
 		<div class="test-panel">\
