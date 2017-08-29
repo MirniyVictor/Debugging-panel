@@ -125,6 +125,7 @@ $(function(){
 		e.stopPropagation();
 		console.log(e.target);
 		var selectionElem = $(e.target);
+
 		if(selectionElem.closest('.test-panel').length) {
 			return;
 		} 
@@ -136,5 +137,20 @@ $(function(){
 		} else {
 			selectionElem.attr('contenteditable', false);
 		}
+
+		//on and off clone mod
+
+		if($('[name=test-panel-clone]').is(':checked')) {
+			var cloneMod = selectionElem.clone();
+			selectionElem.css('position', 'relative');
+			var cloneModBlock = $('<div style="position: absolute; left: 100%; top: 0;"><div class="btn-mod">clone</div></div>');
+			selectionElem.append(cloneModBlock);
+			selectionElem.find('.btn-mod').on('click', function(event){
+				event.preventDefault();
+				$(this).parent().append(cloneMod);
+			})
+		}
 	});
+
+	console.info('исправлено - при выключении чек бокса режим ректирования отключается');
 })
