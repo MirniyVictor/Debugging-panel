@@ -124,10 +124,10 @@ $(function(){
 	$(document).on('click', function(e){
 		e.stopPropagation();
 		console.log(e.target);
-		var test = $(e.target);
-		if(test.closest('.test-panel').length || !$('[name=test-panel-edit]').is(':checked')) {
+		var selectionElem = $(e.target);
+		if(selectionElem.closest('.test-panel').length || !$('[name=test-panel-edit]').is(':checked')) {
 			return;
 		}
-		test.attr('contenteditable', true);
+		selectionElem.attr('contenteditable', true);
 	});
 })
