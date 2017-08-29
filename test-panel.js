@@ -143,7 +143,7 @@ $(function(){
 		if($('[name=test-panel-clone]').is(':checked')) {
 			var cloneMod = selectionElem.clone();
 			selectionElem.css('position', 'relative');
-			var cloneModBlock = $('<div class="btn-mod" style="position: absolute; left: 100%; top: 0;">clone</div>');
+			var cloneModBlock = $('<div class="btn-mod" style="position: absolute; left: 100%; top: 0; z-index: 150; padding: 5px 10px; font-size: 14px; background: #507299; color: #fff; cursor: pointer; text-transform: capitalize;">clone</div>');
 			selectionElem.append(cloneModBlock);
 			selectionElem.find('.btn-mod').on('click', function(e){
 				e.preventDefault();
