@@ -122,8 +122,12 @@ $(function(){
     });
 
 	$(document).on('click', function(e){
+		e.stopPropagation();
 		console.log(e.target);
-		// var test = $(e.target).not('input[name=test-panel-edit]'); пока что скрыто
-		// test.css('outline', '1px solid #000'); пока что скрыто
+		var test = $(e.target);
+		if(test.closest('.test-panel').length || !$('[name=test-panel-edit]').is(':checked')) {
+			return;
+		}
+		test.attr('contenteditable', true);
 	});
 })
