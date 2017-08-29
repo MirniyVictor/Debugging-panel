@@ -1,5 +1,7 @@
 $(function(){
 
+	// dom style
+
 	var debugStyle = $('\
 		<style>\
 			.test-panel {\
@@ -71,6 +73,23 @@ $(function(){
 			    border-radius: 4px;\
 			    padding: 0;\
 			}\
+			.test-panel__mod-btn {\
+			    display: flex;\
+			    align-items: center;\
+			    justify-content: center;\
+				width: 50px;\
+				height: 50px;\
+				position: absolute;\
+				left: 100%;\
+				top: 0;\
+				z-index: 150;\
+				padding: 5px 10px;\
+				font-size: 14px;\
+				background: #507299;\
+				color: #fff;\
+				cursor: pointer;\
+				text-transform: capitalize;\
+			}\
 		</style>\
 	');
 	
@@ -110,6 +129,15 @@ $(function(){
 		</div>\
 	');
 
+	var cloneModBlock = $('\
+		<div class="test-panel__mod-btn">\
+			<svg fill="#FFFFFF" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">\
+			    <path d="M0 0h24v24H0z" fill="none"/>\
+			    <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>\
+			</svg>\
+		</div>\
+	');
+
 	$('body').append(debugStyle, debugHtml);
 
 	var debugbutton = $('.test-panel__btn');
@@ -143,15 +171,13 @@ $(function(){
 		if($('[name=test-panel-clone]').is(':checked')) {
 			var cloneMod = selectionElem.clone();
 			selectionElem.css('position', 'relative');
-			var cloneModBlock = $('<div class="btn-mod" style="position: absolute; left: 100%; top: 0; z-index: 150; padding: 5px 10px; font-size: 14px; background: #507299; color: #fff; cursor: pointer; text-transform: capitalize;">clone</div>');
+			
 			selectionElem.append(cloneModBlock);
-			selectionElem.find('.btn-mod').on('click', function(e){
-				e.preventDefault();
+			selectionElem.find('.test-panel__mod-btn').on('click', function(e){
+				e.parent().preventDefault();
 				$(this).parent().after(cloneMod);
 				$(this).remove();
 			})
 		}
 	});
-
-	console.info('исправлено - при выключении чек бокса режим ректирования отключается, добавлен мод для клонирования элементов');
 })
