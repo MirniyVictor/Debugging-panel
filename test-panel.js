@@ -80,7 +80,7 @@ $(function(){
 				width: 50px;\
 				height: 50px;\
 				position: absolute;\
-				left: 100%;\
+				right: 0;\
 				top: 0;\
 				z-index: 150;\
 				padding: 5px 10px;\
@@ -151,7 +151,7 @@ $(function(){
 
 	$(document).on('click', function(e){
 		e.stopPropagation();
-		console.log(e.target);
+		// console.log(e.target); скрыл 
 		var selectionElem = $(e.target);
 
 		if(selectionElem.closest('.test-panel').length) {
@@ -174,10 +174,10 @@ $(function(){
 			
 			selectionElem.append(cloneModBlock);
 			selectionElem.find('.test-panel__mod-btn').on('click', function(e){
-				e.parent().preventDefault();
+				e.preventDefault();
 				$(this).parent().after(cloneMod);
 				$(this).remove();
-			})
+			});
 		}
 	});
 })
