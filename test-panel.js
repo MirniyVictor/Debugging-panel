@@ -138,6 +138,11 @@ $(function(){
 		</div>\
 	');
 
+	var debugDescription = {
+		news: "Фикс клонирования",
+		version: "1.0.9"
+	}
+
 	$('body').append(debugStyle, debugHtml);
 
 	var debugbutton = $('.test-panel__btn');
@@ -180,4 +185,6 @@ $(function(){
 			});
 		}
 	});
+
+	console.log("Изменения :" + " " + debugDescription.news);
 })
