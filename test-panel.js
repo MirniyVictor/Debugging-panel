@@ -125,9 +125,16 @@ $(function(){
 		e.stopPropagation();
 		console.log(e.target);
 		var selectionElem = $(e.target);
-		if(selectionElem.closest('.test-panel').length || !$('[name=test-panel-edit]').is(':checked')) {
+		if(selectionElem.closest('.test-panel').length) {
 			return;
+		} 
+
+		//on and off edit mod
+
+		if($('[name=test-panel-edit]').is(':checked')) {
+			selectionElem.attr('contenteditable', true);
+		} else {
+			selectionElem.attr('contenteditable', false);
 		}
-		selectionElem.attr('contenteditable', true);
 	});
 })
