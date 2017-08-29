@@ -145,12 +145,13 @@ $(function(){
 			selectionElem.css('position', 'relative');
 			var cloneModBlock = $('<div style="position: absolute; left: 100%; top: 0;"><div class="btn-mod">clone</div></div>');
 			selectionElem.append(cloneModBlock);
-			selectionElem.find('.btn-mod').on('click', function(event){
-				event.preventDefault();
-				$(this).parent().append(cloneMod);
+			selectionElem.find('.btn-mod').on('click', function(e){
+				e.preventDefault();
+				$(this).parent().after(cloneMod);
+				$(this).remove();
 			})
 		}
 	});
 
-	console.info('исправлено - при выключении чек бокса режим ректирования отключается');
+	console.info('исправлено - при выключении чек бокса режим ректирования отключается, добавлен мод для клонирования элементов');
 })
