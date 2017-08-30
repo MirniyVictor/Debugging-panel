@@ -79,6 +79,7 @@ body {
     line-height: 1;
     text-transform: uppercase;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .test-panel__label input {

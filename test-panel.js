@@ -63,6 +63,7 @@ $(function(){
 			    line-height: 1;\
 			    text-transform: uppercase;\
 			    font-weight: bold;\
+			    cursor: pointer;\
 			}\
 			.test-panel__label input {\
 			    display: block;\
@@ -92,7 +93,7 @@ $(function(){
 			}\
 		</style>\
 	');
-	
+
 	// dom elements
 
 	var debugHtml = $('\
@@ -107,19 +108,19 @@ $(function(){
 				<div class="test-panel__section">\
 					<div class="test-panel__item">\
 						<div class="test-panel__label">\
-							<input name="test-panel-edit" type="checkbox">\
+							<input id="text" name="test-panel-edit" type="checkbox">\
 						</div>\
-						<div class="test-panel__name">\
+						<label for="text" class="test-panel__name">\
 							Режим редактирования элементов\
-						</div>\
+						</label>\
 					</div>\
 					<div class="test-panel__item">\
 						<div class="test-panel__label">\
-							<input name="test-panel-clone" type="checkbox">\
+							<input id="clone" name="test-panel-clone" type="checkbox">\
 						</div>\
-						<div class="test-panel__name">\
+						<label for="clone" class="test-panel__name">\
 							Режим клонирования элементов\
-						</div>\
+						</label>\
 					</div>\
 					<div class="test-panel__item">\
 						<div class="test-panel__info"></div>\
@@ -156,12 +157,21 @@ $(function(){
 
 	$(document).on('click', function(e){
 		e.stopPropagation();
-		// console.log(e.target); скрыл 
-		var selectionElem = $(e.target);
+		// console.log(e.target); скрыл
+		var selectionElem         = $(e.target),
+		    selectionElemTag      = selectionElem.context.tagName,
+		    selectionElemClass    = selectionElem.context.className,
+		    selectionElemClassRow = (selectionElemClass == "") ? ' Нет класса': ' Класс элемента <strong>' + selectionElemClass + '</strong>';
+
+		$('.test-panel__mod-btn').each(function(){
+			$(this).parent().css('outline', '');
+			$(this).remove();
+		});
+
 
 		if(selectionElem.closest('.test-panel').length) {
 			return;
-		} 
+		}
 
 		//on and off edit mod
 
@@ -175,15 +185,19 @@ $(function(){
 
 		if($('[name=test-panel-clone]').is(':checked')) {
 			var cloneMod = selectionElem.clone();
-			selectionElem.css('position', 'relative');
-			
+			selectionElem.css({
+				'position' : 'relative',
+				'outline'  : '1px solid red'
+			});
+
 			selectionElem.append(cloneModBlock);
+			debuginfo.empty().append('<span style="font-size: 14px; color: #fff;"> Тег <strong>' + selectionElemTag + '</strong>' + selectionElemClassRow + '</span>' );
 			selectionElem.find('.test-panel__mod-btn').on('click', function(e){
 				e.preventDefault();
 				$(this).parent().after(cloneMod);
 				$(this).remove();
 			});
-			
+
 			return false;
 		}
 	});
