@@ -79,7 +79,7 @@ $(function(){
 			    justify-content: center;\
 				width: 50px;\
 				height: 50px;\
-				position: absolute;\
+				position: absolute !important;\
 				right: 0;\
 				top: 0;\
 				z-index: 150;\
