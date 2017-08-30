@@ -187,7 +187,7 @@ $(function(){
 			var cloneMod = selectionElem.clone();
 			selectionElem.css({
 				'position' : 'relative',
-				'outline'  : '1px solid red'
+				'outline'  : '1px solid #507299'
 			});
 
 			selectionElem.append(cloneModBlock);
