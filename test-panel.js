@@ -183,17 +183,8 @@ $(function(){
 				$(this).parent().after(cloneMod);
 				$(this).remove();
 			});
-
-			// selectionElem.find('.test-panel__mod-btn').hover(
-			// 	function() {
-			// 		e.preventDefault();
-			// 		$(this).parent().after(cloneMod);
-			// 		$(this).remove();
-			// 	}, function() {
-			// 		return
-			// 		console.log('test');
-			// 	}
-			// );
+			
+			return false;
 		}
 	});
 
