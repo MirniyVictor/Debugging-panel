@@ -165,10 +165,17 @@ $(function(){
 		    selectionElemClass    = selectionElem.context.className,
 		    selectionElemClassRow = (selectionElemClass == "") ? ' Нет класса': ' Класс элемента <strong>' + selectionElemClass + '</strong>';
 
+
 		$('.test-panel__mod-btn').each(function(){
-			$(this).parent().css('outline', '');
+			$(this).parent().css({
+				'outline': '',
+				'box-shadow': 'none',
+				'transition': 'all 0.5s'
+			});
 			$(this).remove();
 		});
+
+		$('body').find('[style="position: relative; box-shadow: rgb(0, 114, 245) -8px 1px 10px; transition: all 0.5s; outline: rgb(80, 114, 153) solid 1px;"]').css('outline', 'none !important');
 
 
 		if(selectionElem.closest('.test-panel').length) {
@@ -189,7 +196,9 @@ $(function(){
 			var cloneMod = selectionElem.clone();
 			selectionElem.css({
 				'position' : 'relative',
-				'outline'  : '1px solid #507299'
+				'outline'  : '1px solid #507299',
+				'box-shadow': '-8px 1px 10px #0072f5',
+				'transition': 'all 0.5s'
 			});
 
 			selectionElem.append(cloneModBlock);
