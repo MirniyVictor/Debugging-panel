@@ -188,5 +188,11 @@ $(function(){
 		}
 	});
 
+	//find adaptive
+
+	if($('[name=viewport]').length) {
+		debuginfo.append('<span style="font-size: 12px; color: #fff;">Скорее всего на сайте присутствует адаптивная версия</span>');
+	}
+
 	console.log("Изменения :" + " " + debugDescription.news);
 })
