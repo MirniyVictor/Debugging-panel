@@ -179,10 +179,22 @@ $(function(){
 			
 			selectionElem.append(cloneModBlock);
 			selectionElem.find('.test-panel__mod-btn').on('click', function(e){
+				e.stopPropagation();
 				e.preventDefault();
 				$(this).parent().after(cloneMod);
 				$(this).remove();
 			});
+
+			// selectionElem.find('.test-panel__mod-btn').hover(
+			// 	function() {
+			// 		e.preventDefault();
+			// 		$(this).parent().after(cloneMod);
+			// 		$(this).remove();
+			// 	}, function() {
+			// 		return
+			// 		console.log('test');
+			// 	}
+			// );
 		}
 	});
 
