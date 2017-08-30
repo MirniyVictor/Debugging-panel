@@ -179,7 +179,6 @@ $(function(){
 			
 			selectionElem.append(cloneModBlock);
 			selectionElem.find('.test-panel__mod-btn').on('click', function(e){
-				e.stopPropagation();
 				e.preventDefault();
 				$(this).parent().after(cloneMod);
 				$(this).remove();
