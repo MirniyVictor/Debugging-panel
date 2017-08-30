@@ -1,5 +1,7 @@
 $(function(){
 
+	// dotn touch script mother fuck
+	
 	// dom style
 
 	var debugStyle = $('\
