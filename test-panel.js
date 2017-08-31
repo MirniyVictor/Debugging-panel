@@ -175,6 +175,8 @@ $(function(){
 			$(this).remove();
 		});
 
+		//временно вестит тут
+
 		$('body').find('[style="position: relative; box-shadow: rgb(0, 114, 245) -8px 1px 10px; transition: all 0.5s; outline: rgb(80, 114, 153) solid 1px;"]').css('outline', 'none !important');
 
 
@@ -208,6 +210,12 @@ $(function(){
 				$(this).parent().after(cloneMod);
 				$(this).remove();
 			});
+
+			//find and edit img
+
+			var imgMod = selectionElem.find('img');
+			var imgModSrc = imgMOd.attr('src');
+			var imgModPatch; // img new patch
 
 			return false;
 		}
