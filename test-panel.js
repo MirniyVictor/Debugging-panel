@@ -175,7 +175,7 @@ $(function(){
 			$(this).remove();
 		});
 
-		//временно вестит тут
+		//временно весит тут
 
 		$('body').find('[style="position: relative; box-shadow: rgb(0, 114, 245) -8px 1px 10px; transition: all 0.5s; outline: rgb(80, 114, 153) solid 1px;"]').css('outline', 'none !important');
 
