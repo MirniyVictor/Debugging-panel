@@ -10,7 +10,7 @@ $(function(){
 			    position: fixed;\
 			    left: 0;\
 			    right: 0;\
-			    background: #507299;\
+			    background: rgba(0, 0, 0, 0.80);\
 			    padding: 20px;\
 			    bottom: 0;\
 			    z-index: 15000000;\
@@ -31,7 +31,7 @@ $(function(){
 			    top: -50px;\
 			    width: 50px;\
 			    height: 50px;\
-			    background: #507299;\
+			    background: rgba(0, 0, 0, 0.80);\
 			    cursor: pointer;\
 			    border-radius: 5px 5px 0 0;\
 			}\
@@ -63,8 +63,6 @@ $(function(){
 			    font-size: 14px;\
 			    color: #fff;\
 			    line-height: 1;\
-			    text-transform: uppercase;\
-			    font-weight: bold;\
 			    cursor: pointer;\
 			}\
 			.test-panel__label input {\
@@ -210,15 +208,15 @@ $(function(){
 				$(this).parent().after(cloneMod);
 				$(this).remove();
 			});
-
-			//find and edit img
-
-			var imgMod = selectionElem.find('img');
-			var imgModSrc = imgMOd.attr('src');
-			var imgModPatch; // img new patch
-
 			return false;
 		}
+
+		// image edit mod
+
+		if(selectionElemTag == "IMG") {
+			$(this).toggleClass("debug_img__class");
+		}
+
 	});
 
 	//find adaptive
