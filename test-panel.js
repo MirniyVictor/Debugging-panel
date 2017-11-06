@@ -86,15 +86,15 @@ $(function(){
 				z-index: 150;\
 				padding: 5px 10px;\
 				font-size: 14px;\
-				background: #507299;\
+				background: rgba(0, 0, 0, 0.80);\
 				color: #fff;\
 				cursor: pointer;\
 				text-transform: capitalize;\
 			}\
 			.debug__option__class {\
 				position: relative;\
-				outline: 1px solid #507299;\
-				box-shadow: -8px 1px 10px #0072f5;\
+				outline: 1px dotted #507299;\
+				box-shadow: -3px 1px 10px #0072f5;\
 				transition: all 0.5s;\
 			}\
 		</style>\
@@ -146,7 +146,7 @@ $(function(){
 	');
 
 	var debugDescription = {
-		news: "Фикс клонирования + поиск адаптивной версии",
+		news: "редактирование картинок + фиксы стилей",
 		version: "1.1.0"
 	}
 
@@ -196,6 +196,7 @@ $(function(){
 			});
 			return false;
 		} else {
+			$('.test-panel__mod-btn').remove();
 			$('.debug__option__class').removeClass('debug__option__class');
 		}
 
