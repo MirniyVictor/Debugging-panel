@@ -97,6 +97,9 @@ $(function(){
 				box-shadow: -3px 1px 10px #0072f5;\
 				transition: all 0.5s;\
 			}\
+			.debug_img__class {\
+				position: relative;\
+			}\
 		</style>\
 	');
 
