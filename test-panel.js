@@ -100,6 +100,17 @@ $(function(){
 			.debug_img__class {\
 				position: relative;\
 			}\
+			.debug_img__block {\
+				position: asbolute;\
+				left: 0;\
+				right: 0;\
+				top: 0;\
+				height: 25px;\
+			}\
+			.debug_img__block input {\
+				width: 100%;\
+				height: 25px;\
+			}\
 		</style>\
 	');
 
@@ -209,6 +220,20 @@ $(function(){
 			selectionElem.toggleClass("debug_img__class");
 			var imgSrc = selectionElem.attr("src");
 			console.log(imgSrc);
+
+            // var cloneModBlock = $('\
+            // 	<div class="debug_img__block">\
+				// 	<div class="debug_img__path">\
+				// 		<input type="text" value="imgSrc">\
+				// 	</div>\
+            // 	</div>\
+            // ');
+            //
+            // var newImgPath = selectionElem.find('debug_img__path input').val();
+            //
+            // selectionElem.append(cloneModBlock);
+
+            // var src = (selectionElem.attr("src") === newImgPath );
 		}
 
 	});
