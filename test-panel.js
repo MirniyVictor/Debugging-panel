@@ -147,7 +147,7 @@ $(function(){
 
 	var debugDescription = {
 		news: "Фикс клонирования + поиск адаптивной версии",
-		version: "1.0.9"
+		version: "1.1.0"
 	}
 
 	$('body').append(debugStyle, debugHtml);
@@ -168,21 +168,6 @@ $(function(){
 		    selectionElemTag      = selectionElem.context.tagName,
 		    selectionElemClass    = selectionElem.context.className,
 		    selectionElemClassRow = (selectionElemClass == "") ? ' Нет класса': ' Класс элемента <strong>' + selectionElemClass + '</strong>';
-
-
-		$('.test-panel__mod-btn').each(function(){
-			$(this).parent().css({
-				'outline': '',
-				'box-shadow': 'none',
-				'transition': 'all 0.5s'
-			});
-			$(this).remove();
-		});
-
-		//временно весит тут
-
-		$('body').find('[style="position: relative; box-shadow: rgb(0, 114, 245) -8px 1px 10px; transition: all 0.5s; outline: rgb(80, 114, 153) solid 1px;"]').css('outline', 'none !important');
-
 
 		if(selectionElem.closest('.test-panel').length) {
 			return;
