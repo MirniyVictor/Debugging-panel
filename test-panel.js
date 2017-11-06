@@ -91,6 +91,12 @@ $(function(){
 				cursor: pointer;\
 				text-transform: capitalize;\
 			}\
+			.debug__option__class {\
+				position: relative;\
+				outline: 1px solid #507299;\
+				box-shadow: -8px 1px 10px #0072f5;\
+				transition: all 0.5s;\
+			}\
 		</style>\
 	');
 
@@ -194,12 +200,7 @@ $(function(){
 
 		if($('[name=test-panel-clone]').is(':checked')) {
 			var cloneMod = selectionElem.clone();
-			selectionElem.css({
-				'position' : 'relative',
-				'outline'  : '1px solid #507299',
-				'box-shadow': '-8px 1px 10px #0072f5',
-				'transition': 'all 0.5s'
-			});
+			selectionElem.addClass('debug__option__class');
 
 			selectionElem.append(cloneModBlock);
 			debuginfo.empty().append('<span style="font-size: 14px; color: #fff;"> Тег <strong>' + selectionElemTag + '</strong>' + selectionElemClassRow + '</span>' );
@@ -209,12 +210,16 @@ $(function(){
 				$(this).remove();
 			});
 			return false;
+		} else {
+			$('.debug__option__class').removeClass('debug__option__class');
 		}
 
 		// image edit mod
 
 		if(selectionElemTag == "IMG") {
-			$(this).toggleClass("debug_img__class");
+			selectionElem.toggleClass("debug_img__class");
+			var imgSrc = selectionElem.attr("src");
+			console.log(imgSrc);
 		}
 
 	});
