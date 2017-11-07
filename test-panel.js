@@ -244,7 +244,8 @@ $(function(){
                 console.log(imgSrc);
             }
 		} else {
-			
+            $('.debug_img__class__wrap').removeClass('debug_img__class__wrap');
+            selectionElem.parent().find('.debug_img__block').remove();
 		}
 	});
 
