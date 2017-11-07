@@ -100,8 +100,12 @@ $(function(){
 			.debug_img__class {\
 				position: relative;\
 			}\
+			.debug_img__class__wrap {\
+				display: inline-block;\
+				position:relative;\
+			}\
 			.debug_img__block {\
-				position: asbolute;\
+				position: absolute;\
 				left: 0;\
 				right: 0;\
 				top: 0;\
@@ -143,12 +147,22 @@ $(function(){
 						</label>\
 					</div>\
 					<div class="test-panel__item">\
+						<div class="test-panel__label">\
+							<input id="clone" name="test-panel-img" type="checkbox">\
+						</div>\
+						<label for="clone" class="test-panel__name">\
+								Режим редактирования картинок\
+						</label>\
+					</div>\
+					<div class="test-panel__item">\
 						<div class="test-panel__info"></div>\
 					</div>\
 				</div>\
 			</div>\
 		</div>\
 	');
+
+
 
 	var cloneModBlock = $('\
 		<div class="test-panel__mod-btn">\
@@ -214,28 +228,26 @@ $(function(){
 			$('.debug__option__class').removeClass('debug__option__class');
 		}
 
-		// image edit mod
+        // image edit mod
 
-		if(selectionElemTag == "IMG") {
-			selectionElem.toggleClass("debug_img__class");
-			var imgSrc = selectionElem.attr("src");
-			console.log(imgSrc);
+        if($('[name=test-panel-img]').is(':checked')) {
+            if(selectionElemTag == "IMG") {
+                var imgSrcWrap  = selectionElem.wrap('<div class="debug_img__class__wrap"></div>'),
+                	imgSrc 		= selectionElem.attr("src"),
+                    imgSrcBlock = $('\
+						<div class="debug_img__block">\
+							<input type="text" value="">\
+						</div>\
+                	');
+				selectionElem.toggleClass("debug_img__class");
+				selectionElem.parent().append(imgSrcBlock);
+				imgSrcBlock.find('input').val(imgSrc);
 
-            // var cloneModBlock = $('\
-            // 	<div class="debug_img__block">\
-				// 	<div class="debug_img__path">\
-				// 		<input type="text" value="imgSrc">\
-				// 	</div>\
-            // 	</div>\
-            // ');
-            //
-            // var newImgPath = selectionElem.find('debug_img__path input').val();
-            //
-            // selectionElem.append(cloneModBlock);
-
-            // var src = (selectionElem.attr("src") === newImgPath );
+                console.log(imgSrc);
+            }
+		} else {
+			
 		}
-
 	});
 
 	//find adaptive
