@@ -1,6 +1,6 @@
 $(function(){
 
-	// dotn touch script mother fuck
+	// dont touch script mother fuck
 	
 	// dom style
 
@@ -162,8 +162,6 @@ $(function(){
 		</div>\
 	');
 
-
-
 	var cloneModBlock = $('\
 		<div class="test-panel__mod-btn">\
 			<svg fill="#FFFFFF" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">\
@@ -228,7 +226,7 @@ $(function(){
 			$('.debug__option__class').removeClass('debug__option__class');
 		}
 
-        // image edit mod
+        //on and off image edit mod
 
         if($('[name=test-panel-img]').is(':checked')) {
             if(selectionElemTag == "IMG") {
@@ -246,7 +244,8 @@ $(function(){
                 console.log(imgSrc);
             }
 		} else {
-			
+            $('.debug_img__class__wrap').removeClass('debug_img__class__wrap');
+            selectionElem.parent().find('.debug_img__block').remove();
 		}
 	});
 
