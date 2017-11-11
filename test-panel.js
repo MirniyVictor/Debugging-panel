@@ -237,6 +237,11 @@ $(function(){
 							<input type="text" value="">\
 						</div>\
                 	');
+					imgSrcBtn = $('\
+						<div class="debug_img__block--btn">\
+							Заменить\
+						</div>\
+					');
 				selectionElem.toggleClass("debug_img__class");
 				selectionElem.parent().append(imgSrcBlock);
 				imgSrcBlock.find('input').val(imgSrc);
@@ -249,7 +254,7 @@ $(function(){
 		}
 	});
 
-	//find adaptive
+	//find adaptive test
 
 	if($('[name=viewport]').length) {
 		debuginfo.append('<span style="font-size: 12px; color: #fff;">Скорее всего на сайте присутствует адаптивная версия</span>');
