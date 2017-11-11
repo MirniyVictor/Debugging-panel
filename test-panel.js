@@ -237,6 +237,11 @@ $(function(){
 							<input type="text" value="">\
 						</div>\
                 	');
+					imgSrcBtn = $('\
+						<div class="debug_img__block--btn">\
+							Заменить\
+						</div>\
+					');
 				selectionElem.toggleClass("debug_img__class");
 				selectionElem.parent().append(imgSrcBlock);
 				imgSrcBlock.find('input').val(imgSrc);
