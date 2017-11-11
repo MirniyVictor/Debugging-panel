@@ -244,7 +244,13 @@ $(function(){
 					');
 				selectionElem.toggleClass("debug_img__class");
 				selectionElem.parent().append(imgSrcBlock);
+				$(".debug_img__block").append(imgSrcBtn);
 				imgSrcBlock.find('input').val(imgSrc);
+
+                imgSrcBtn.on('click', function(){
+                    var a = imgSrcBlock.find('input').val();
+                    selectionElem.attr("src", a);
+				})
 
                 console.log(imgSrc);
             }
