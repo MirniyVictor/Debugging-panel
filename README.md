@@ -1,1 +1,4 @@
-"# Debugging-panel" 
+"# Debugging-panel"
+## Установка
+
+## Настройка
