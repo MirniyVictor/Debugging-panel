@@ -1,7 +1,7 @@
 $(function(){
 
 	// dont touch script mother fuck
-	
+
 	// dom style
 
 	var debugStyle = $('\
@@ -106,14 +106,31 @@ $(function(){
 			}\
 			.debug_img__block {\
 				position: absolute;\
-				left: 0;\
-				right: 0;\
+				right: -160px;\
 				top: 0;\
 				height: 25px;\
+				width: 160px;\
 			}\
 			.debug_img__block input {\
 				width: 100%;\
 				height: 25px;\
+				border: none;\
+			}\
+			.debug_img__block--btn {\
+				background: rgba(0, 0, 0, 0.80);\
+			    color: #fff;\
+			    padding: 5px;\
+			    text-align: center;\
+			    background-size: 16px;\
+			    font-family: Tahoma;\
+			    font-size: 14px;\
+			    cursor: pointer;\
+			    display: flex;\
+			    justify-content: center;\
+			    align-items: center;\
+			}\
+			.debug_img__block--btn svg {\
+ 			   margin-left: 10px;\
 			}\
 		</style>\
 	');
@@ -240,6 +257,10 @@ $(function(){
 					imgSrcBtn = $('\
 						<div class="debug_img__block--btn">\
 							Заменить\
+							<svg fill="#FFFFFF" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">\
+							    <path d="M19 8l-4 4h3c0 3.31-2.69 6-6 6-1.01 0-1.97-.25-2.8-.7l-1.46 1.46C8.97 19.54 10.43 20 12 20c4.42 0 8-3.58 8-8h3l-4-4zM6 12c0-3.31 2.69-6 6-6 1.01 0 1.97.25 2.8.7l1.46-1.46C15.03 4.46 13.57 4 12 4c-4.42 0-8 3.58-8 8H1l4 4 4-4H6z"/>\
+							    <path d="M0 0h24v24H0z" fill="none"/>\
+							</svg>\
 						</div>\
 					');
 				selectionElem.toggleClass("debug_img__class");
