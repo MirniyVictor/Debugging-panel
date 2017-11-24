@@ -2,8 +2,8 @@
 ##
 ## Установка
 **Есть два способода установки:**
-+ Добавить строку `<script src="путь_до_вашей_панельки/test-panel.js"></script>` в header после jquery
-+ Добавить строку `$('head').append('<script src="путь_до_вашей_панельки/test-panel.js"></script>');` в "Console"
++ Добавить строку `<script src="panelpath/test-panel.js"></script>` в header после jquery
++ Добавить строку `$('head').append('<script src="panelpath/test-panel.js"></script>');` в "Console"
 ##
 ## Настройка
 1) "Режим редактирования элементов"
