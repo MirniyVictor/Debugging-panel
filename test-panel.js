@@ -1,7 +1,6 @@
 $(function(){
 
 	// dont touch script mother fuck
-
 	// dom style
 
 	var debugStyle = $('\
